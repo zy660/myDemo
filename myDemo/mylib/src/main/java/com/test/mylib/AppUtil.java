@@ -3,7 +3,7 @@ package com.test.mylib;
 
 public class AppUtil {
     /**
-     * 
+     * isEmpty function
      * @param txt
      * @return
      */
