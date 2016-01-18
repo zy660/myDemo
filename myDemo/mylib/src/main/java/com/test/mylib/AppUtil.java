@@ -9,7 +9,7 @@ public class AppUtil {
      * @param txt
      * @return
      */
-    public static boolean isEmpty(String txt){
+    public static boolean isEmpty1(String txt){
         if (txt == null || txt.length() == 0){
             return true;
         }
