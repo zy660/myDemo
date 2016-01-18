@@ -1,6 +1,8 @@
 package com.test.mylib;
 
-
+/**
+ * AppUtil
+ */
 public class AppUtil {
     /**
      * isEmpty function
