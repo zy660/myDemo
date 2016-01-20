@@ -7,6 +7,7 @@ import android.widget.EditText;
 
 import com.test.mydemo.manage.ILogin;
 import com.test.mydemo.manage.LoginManageImpl;
+import com.test.mydemo.manage.OnLoginListener;
 import com.test.mydemo.view.ILoginView;
 
 public class TestActivity extends Activity implements ILoginView{
@@ -17,7 +18,7 @@ public class TestActivity extends Activity implements ILoginView{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        iLoginManager = new LoginManageImpl();
+        iLoginManager = new LoginManageImpl(this);
         setContentView(R.layout.activity_main);
         etUserName = (EditText)findViewById(R.id.et_username);
         etPassword = (EditText)findViewById(R.id.et_password);
@@ -25,7 +26,7 @@ public class TestActivity extends Activity implements ILoginView{
         btnClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                login();
             }
         });
     }
@@ -33,16 +34,34 @@ public class TestActivity extends Activity implements ILoginView{
 
     @Override
     public String getUserName() {
-        return null;
+        return etUserName.getText().toString();
     }
 
     @Override
     public String getPassword() {
-        return null;
+        return etPassword.getText().toString();
     }
 
     @Override
     public void login() {
+        iLoginManager.onLogin(getUserName(), getPassword(), new onLoginClickListener());
+    }
 
+    class onLoginClickListener implements OnLoginListener{
+
+        @Override
+        public void onLoginSuccess() {
+
+        }
+
+        @Override
+        public void onLoginFail() {
+
+        }
+
+        @Override
+        public void onLoginBefore() {
+
+        }
     }
 }
