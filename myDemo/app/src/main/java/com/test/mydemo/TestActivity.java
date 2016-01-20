@@ -1,8 +1,13 @@
 package com.test.mydemo;
 import android.app.Activity;
-/**
- * Created by liupengfei on 2016/1/18.
- */
+import android.os.Bundle;
+
 public class TestActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
 
 }
