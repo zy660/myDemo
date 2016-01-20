@@ -49,7 +49,7 @@ public class TestActivity extends Activity implements ILoginView{
 
     @Override
     public void showWaitTxt() {
-        etUserName.setText("please waiting...");
+        etUserName.setText("please waiting...test");
     }
 
     @Override
