@@ -7,4 +7,7 @@ public interface ILoginView {
     public String getUserName();
     public String getPassword();
     public void login();
+
+    void showWaitTxt();
+    void removeWaitTxt();
 }

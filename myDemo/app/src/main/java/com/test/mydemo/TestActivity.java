@@ -47,6 +47,17 @@ public class TestActivity extends Activity implements ILoginView{
         iLoginManager.onLogin(getUserName(), getPassword(), new onLoginClickListener());
     }
 
+    @Override
+    public void showWaitTxt() {
+        etUserName.setText("please waiting...");
+    }
+
+    @Override
+    public void removeWaitTxt() {
+        etUserName.setText("");
+        etPassword.setText("");
+    }
+
     class onLoginClickListener implements OnLoginListener{
 
         @Override

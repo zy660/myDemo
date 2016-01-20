@@ -12,13 +12,19 @@ public class LoginManageImpl implements ILogin{
     @Override
     public void onLogin(String username, String password, OnLoginListener loginListener) {
         loginListener.onLoginBefore();
-
-        try {
-            Thread.sleep(2000);
-            loginListener.onLoginSuccess();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        iLoginView.showWaitTxt();
+        if ("username".equals(username) && "123456".equals(password)){
+            try {
+                Thread.sleep(2000);
+                loginListener.onLoginSuccess();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                loginListener.onLoginFail();
+            }
+        }else{
             loginListener.onLoginFail();
         }
+        iLoginView.removeWaitTxt();
+
     }
 }
